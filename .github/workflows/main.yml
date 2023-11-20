@@ -25,4 +25,4 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add index.html
           git commit -m "Update index.html for PR"
-          git push
+          git push origin main
