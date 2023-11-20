@@ -1,5 +1,4 @@
 #!/bin/bash
 set -e
 
-# check pre-requistes
-echo "this script is here to make changes for tests"
+echo "make changes here to trigger workflow"
