@@ -1,0 +1,22 @@
+name: Update Hello World on PR
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  update_hello_world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update Hello World
+        run: |
+          echo '<h1>PR raised</h1>' > index.html
+          git add index.html
+          git commit -m "Update Hello World in index.html" || true
+          git push
+
