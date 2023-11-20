@@ -23,4 +23,4 @@ jobs:
           echo '<h1>PR raised</h1>' > index.html
           git add index.html
           git commit -m "Update in index.html" || true
-          git push
+          git push origin HEAD:refs/heads/${{ github.head_ref }}
