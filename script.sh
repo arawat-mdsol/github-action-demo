@@ -3,4 +3,5 @@ set -e
 
 # check pre-requistes
 echo "this script is here to make changes for tests"
+
 echo "change 1"
