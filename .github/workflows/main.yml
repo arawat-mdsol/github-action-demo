@@ -23,7 +23,6 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git pull
           git add index.html
           git commit -m "Update index.html for PR"
-          git push origin develop
+          git push
