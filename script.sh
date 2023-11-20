@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-echo "make changes here to trigger workflow"
+echo "changes made here to trigger workflow"
