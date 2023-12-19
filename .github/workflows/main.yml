@@ -11,18 +11,8 @@ on:
 jobs:
   update-index:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Update index.html
-        run: echo "<html><body><h1>PR is raised on the main branch</h1></body></html>" > index.html
-
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add index.html
-          git commit -m "Update index.html for PR"
-          git push
+      - name: demo job
+        run: echo "changes made and PR raised"
