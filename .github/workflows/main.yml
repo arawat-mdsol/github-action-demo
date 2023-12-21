@@ -9,7 +9,6 @@ on:
       - main
     types:
       - opened
-      - synchronize
 
   workflow_dispatch:
       inputs:
