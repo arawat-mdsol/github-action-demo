@@ -14,20 +14,27 @@ on:
   workflow_dispatch:
       inputs:
         ENVIRONMENT:
-          description: 'Pass the environment name'
+          description: 'environment name'
           required: true
           default: "sandbox"
-          type: environment
+
+        AWS_REGION:
+          description: 'aws region'
+          required: true
+          default: "us-east-1"
 
 jobs:
+
   update-script:
-    environment : sandbox
     runs-on: ubuntu-latest
+    env:
+      environement : ${{ github.event.inputs.ENVIRONMENT }}
+      aws_region : ${{ github.event.inputs.AWS_REGION }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: demo job
-        run: echo "changes made and PR raised on env - ${{env}}
+        run: echo "changes made and PR raised on env - ${{env.environement}}-${{env.aws_region}}
 
 
   see-working-dir:
