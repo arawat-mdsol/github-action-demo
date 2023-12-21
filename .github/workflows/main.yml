@@ -8,7 +8,12 @@ on:
       - opened
       - synchronize
   workflow_dispatch:
-
+      inputs:
+        ENVIRONMENT:
+          description: 'Pass the environment name'
+          required: true
+          default: "sandbox"
+          type: environment
 jobs:
   update-index:
     runs-on: ${{ matrix.os }}
