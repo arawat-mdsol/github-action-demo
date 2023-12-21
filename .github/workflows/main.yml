@@ -27,8 +27,8 @@ jobs:
   echo-env_and_region:
     runs-on: ubuntu-latest
     env:
-      environement : ${{ github.event.inputs.ENVIRONMENT }}
-      aws_region : ${{ github.event.inputs.AWS_REGION }}
+      environement : sandbox
+      aws_region : sandbox
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
