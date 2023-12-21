@@ -27,13 +27,13 @@ jobs:
   echo-env_and_region:
     runs-on: ubuntu-latest
     env:
-      environement : sandbox
-      aws_region : sandbox
+      environement : ${{github.event.inputs.ENVIRONMENT}}
+      aws_region : ${{github.event.inputs.AWS_REGION}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: demo job
-        run: echo "changes made and PR raised for ${{env.environement}}-${{env.aws_region}}
+        run: echo "changes made and PR raised for ${{env.environement}}-${{env.aws_region}}"
 
 
   see-working-dir:
