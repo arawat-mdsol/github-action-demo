@@ -22,14 +22,21 @@ on:
           required: true
           default: "us-east-1"
 jobs:
-  update-index:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+  update-script:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: demo job
         run: echo "changes made and PR raised on env - ${{ inputs.ENVIRONMENT }} - $ {{ inputs.AWS_REGION }}"
+
+  see-working-dir:
+    runs-on: ubuntu-latest
+    needs: update-script
+    steps:
+      - name : checkout code
+        uses : action/checkout@v2
+      - name : checking dir
+        run : pwd 
+
+
