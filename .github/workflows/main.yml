@@ -15,12 +15,10 @@ on:
       inputs:
         ENVIRONMENT:
           description: 'environment name'
-          required: true
           default: 'sandbox'
 
         AWS_REGION:
           description: 'aws region'
-          required: true
           default: 'us-east-1'
 
 jobs:
