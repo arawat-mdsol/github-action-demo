@@ -16,12 +16,12 @@ on:
         ENVIRONMENT:
           description: 'environment name'
           required: true
-          default: "sandbox"
+          default: 'sandbox'
 
         AWS_REGION:
           description: 'aws region'
           required: true
-          default: "us-east-1"
+          default: 'us-east-1'
 
 jobs:
 
