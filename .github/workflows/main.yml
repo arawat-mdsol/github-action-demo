@@ -17,18 +17,18 @@ on:
           description: 'environment name'
           default: 'sandbox'
           type : environment
-
         AWS_REGION:
           description: 'aws region'
           default: 'us-east-1'
+          type : string
 
 jobs:
 
   echo-env_and_region:
     runs-on: ubuntu-latest
     env:
-      environement : ${{github.event.inputs.ENVIRONMENT}}
-      aws_region : ${{github.event.inputs.AWS_REGION}}
+      environement : ${{ inputs.ENVIRONMENT || 'sandbox' }}
+      aws_region : ${{ inputs.AWS_REGION || 'us-east-1' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
