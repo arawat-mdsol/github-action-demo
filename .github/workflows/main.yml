@@ -17,6 +17,10 @@ on:
           required: true
           default: "sandbox"
           type: environment
+        AWS_REGION:
+          description: 'Pass the aws region'
+          required: true
+          default: "us-east-1"
 jobs:
   update-index:
     runs-on: ${{ matrix.os }}
@@ -28,4 +32,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: demo job
-        run: echo "changes made and PR raised"
+        run: echo "changes made and PR raised on env - ${{ inputs.ENVIRONMENT }} - $ {{ inputs.AWS_REGION }}"
