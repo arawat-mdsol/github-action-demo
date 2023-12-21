@@ -35,7 +35,7 @@ jobs:
     needs: update-script
     steps:
       - name : checkout code
-        uses : action/checkout@v2
+        uses : actions/checkout@v2
       - name : checking dir
         run : pwd 
 
