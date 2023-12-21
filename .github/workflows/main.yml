@@ -10,6 +10,7 @@ on:
     types:
       - opened
       - synchronize
+
   workflow_dispatch:
       inputs:
         ENVIRONMENT:
@@ -17,18 +18,17 @@ on:
           required: true
           default: "sandbox"
           type: environment
-        AWS_REGION:
-          description: 'Pass the aws region'
-          required: true
-          default: "us-east-1"
+
 jobs:
   update-script:
+    environment : sandbox
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: demo job
-        run: echo "changes made and PR raised on env - ${{ inputs.ENVIRONMENT }} - $ {{ AWS_REGION }}"
+        run: echo "changes made and PR raised on env - ${{env}}
+
 
   see-working-dir:
     runs-on: ubuntu-latest
